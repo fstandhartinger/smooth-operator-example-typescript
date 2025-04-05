@@ -1,0 +1,30 @@
+{
+  "name": "smooth-operator-typescript-example",
+  "version": "1.0.0",
+  "description": "Example project demonstrating the use of the smooth-operator-agent-tools TypeScript library.",
+  "main": "dist/example.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/example.js",
+    "dev": "ts-node src/example.ts",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean",
+    "prebuild": "npm run clean"
+  },
+  "author": "Smooth Operator",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^4.91.1",
+    "smooth-operator-agent-tools": "^1.0.88"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
