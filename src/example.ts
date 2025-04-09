@@ -1,8 +1,9 @@
 import { SmoothOperatorClient } from 'smooth-operator-agent-tools';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
-// Import the new twitter checker example, uncomment below to run it
+// Import examples
 import { runTwitterChecker } from './twitter-ai-news-checker';
+import { runCollectOrdersErp } from './collect-orders-erp';
 
 // Load environment variables from .env file in the project root
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
@@ -14,10 +15,17 @@ const toJsonString = (obj: any): string => {
 
 async function main() {
 
-  // await runTwitterChecker(); // Uncomment this to run the Twitter example
-  // return;
+  // Choose which example to run by uncommenting the desired line and commenting out others
+  await runCalculatorExample(); // Default example: calculator
+  // await runTwitterChecker();  // Twitter example
+  // await runCollectOrdersErp(); // Email to ERP example
+  
+  console.log("\nExample finished.");
+}
 
-  console.log("Starting Smooth Operator TypeScript Example...");
+// Calculator example implementation
+async function runCalculatorExample() {
+  console.log("Starting Smooth Operator TypeScript Example (Calculator)...");
 
   // Get API keys from environment variables
   const screengraspApiKey = process.env.SCREENGRASP_API_KEY;
@@ -151,9 +159,7 @@ async function main() {
   client.stopServer(); // Optional: Stop the server explicitly if needed, though client disposal might handle it.
   console.log("\nSmooth Operator Server stopped (if started by this client).");
 }
-
-console.log("\nExample finished."); // Add final message
-  }
+}
 
 // Run the main function
 main();
