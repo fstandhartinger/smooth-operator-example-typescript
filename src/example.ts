@@ -1,6 +1,8 @@
 import { SmoothOperatorClient } from 'smooth-operator-agent-tools';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+// Import the new twitter checker example, uncomment below to run it
+import { runTwitterChecker } from './twitter-ai-news-checker';
 
 // Load environment variables from .env file in the project root
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
@@ -11,6 +13,10 @@ const toJsonString = (obj: any): string => {
 };
 
 async function main() {
+
+  // await runTwitterChecker(); // Uncomment this to run the Twitter example
+  // return;
+
   console.log("Starting Smooth Operator TypeScript Example...");
 
   // Get API keys from environment variables
